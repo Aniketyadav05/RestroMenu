@@ -1,13 +1,22 @@
-import React from 'react'
-import RollingGallery from './RollingGallery'
-  
+// App.jsx
+import React, { useState, useEffect } from 'react';
+import WelcomeScreen from './WelcomeScreen';
+import Menu from './Menu';
 
 const App = () => {
-  return (
-    <div>
-      <RollingGallery autoplay={true} pauseOnHover={true} />
-    </div>
-  )
-}
+  const [showWelcome, setShowWelcome] = useState(true);
 
-export default App
+  useEffect(() => {
+    const timer = setTimeout(() => setShowWelcome(false), 3500); // show for 3.5 seconds
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <>
+      <WelcomeScreen isVisible={showWelcome} />
+      {!showWelcome && <Menu />}
+    </>
+  );
+};
+
+export default App;
