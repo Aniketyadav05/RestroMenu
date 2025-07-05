@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChefHat, X, Sparkles, Star, MapPin, Clock, Phone } from 'lucide-react';
-
+import { ChefHat, X, Sparkles, Star, MapPin, Clock, Phone, QuoteIcon } from 'lucide-react';
+import {MenuImages} from "./images"
 const MenuPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
   // Sample menu images - replace with actual paths
   const menuImages = [
-    { id: 1, name: "Vada Pav", image: "/images/Menu1.png" },
-    { id: 2, name: "Misal Pav", image: "/images/Menu2.png" },
-    { id: 3, name: "Dosa", image: "/images/Menu3.png" },
-    { id: 4, name: "Chutneys", image: "/images/Menu4.png" },
-    { id: 5, name: "Bhel Puri", image: "/images/Menu5.png" },
-    { id: 6, name: "Pav Bhaji", image: "/images/Menu6.png" }
+    { id: 1, name: "Vada Pav", image: MenuImages.Menu1 },
+    { id: 2, name: "Misal Pav", image: MenuImages.Menu2 },
+    { id: 3, name: "Dosa", image: MenuImages.Menu3},
+    { id: 4, name: "Chutneys", image: MenuImages.Menu4 },
+    { id: 5, name: "Bhel Puri", image: MenuImages.Menu5 },
+    { id: 6, name: "Pav Bhaji", image: MenuImages.Menu6 },
+    { id: 7, name: "Pav Bhaji", image: MenuImages.Menu7 },
+    { id: 8, name: "Pav Bhaji", image: MenuImages.Menu8 },
+    { id: 9, name: "Pav Bhaji", image: MenuImages.Menu9 }
   ];
 
   useEffect(() => {
@@ -24,32 +27,46 @@ const MenuPage = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1, delayChildren: 0.3 }
+      transition: {
+        staggerChildren: 0.15, // slight overlap
+        delayChildren: 0.3,
+        ease: "easeInOut"
+      }
     }
   };
-
+  
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
-      transition: { type: "spring", stiffness: 100 }
+      transition: {
+        type: "spring",
+        stiffness: 60,   // lower stiffness = smoother
+        damping: 14,     // more damping = less bounce
+        mass: 0.5        // lighter element = more fluid
+      }
     }
   };
-
+  
   const cardVariants = {
-    hidden: { scale: 0.8, opacity: 0 },
+    hidden: { scale: 0.95, opacity: 0 },
     visible: {
       scale: 1,
       opacity: 1,
-      transition: { type: "spring", stiffness: 200, damping: 10 }
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      }
     }
   };
+  
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-orange-50 via-yellow-50 to-orange-100 overflow-hidden">
       {/* Background Texture */}
-      <div className="fixed inset-0 opacity-20">
+      <div className="fixed inset-0 opacity-20 font-[Welcome]">
         <div className="absolute top-10 left-10 w-20 h-20 bg-gradient-to-br from-orange-300 to-red-400 rounded-full blur-xl animate-pulse"></div>
         <div className="absolute top-1/2 right-10 w-32 h-32 bg-gradient-to-br from-yellow-300 to-orange-400 rounded-full blur-xl animate-pulse delay-1000"></div>
         <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-gradient-to-br from-green-300 to-green-500 rounded-full blur-xl animate-pulse delay-2000"></div>
@@ -104,35 +121,37 @@ const MenuPage = () => {
         </motion.div>
 
         {/* Brand Name */}
-        <motion.div variants={itemVariants} className="mb-6">
-          <h1 className="text-4xl md:text-6xl font-black text-gray-800 mb-2">
-            Rohit Bhaiya
+        <motion.div variants={itemVariants} className="mb-2">
+          <h1 className="text-4xl md:text-6xl font-black text-gray-800 mb-2 font-[Hindi]">
+            Rohit भैया
           </h1>
-          <p className="text-xl md:text-2xl text-orange-600 font-bold">
-            Mumbai Ka Vada Pav
+          <p className="text-xl md:text-2xl text-orange-600 font-bold font-[Hindi]">
+          मुंबई Cha Vada Pav
           </p>
         </motion.div>
 
         {/* Tagline */}
         <motion.p
           variants={itemVariants}
-          className="text-lg md:text-xl text-gray-600 mb-8 max-w-md leading-relaxed"
+          className="text-lg md:text-xl text-gray-600 mb-8 max-w-lg leading-relaxed flex flex-row"
         >
-          Authentic Mumbai street food served with love and the perfect chutney blend
+          <QuoteIcon className='scale-x-[-1] w-6 h-6'/><span className='font-bold'>Authentic Mumbai street food served with love</span>< QuoteIcon className="w-6 h-6"/>
         </motion.p>
 
         {/* Location Info */}
         <motion.div
           variants={itemVariants}
-          className="flex items-center gap-4 mb-12 text-gray-600"
+          className="flex items-center gap-4 mb-2 text-gray-600"
         >
           <div className="flex items-center gap-2">
+            <a href="https://www.google.com/search?q=Rohit+Bhaiya+Mumbai+ka+Vada+Pav&stick=H4sIAAAAAAAA_-NgU1I1qDC2NEtJMre0MExLSjYxNTG2MqgwSzQ1B4qYGBqnpJomG6QuYpUPys_ILFFwykjMrExU8C3NTUrMVMhOVAhLTElUCEgsAwBRkO8KSwAAAA&hl=en-GB&mat=Cer0ZjqHeiwSElcBYJahaSR1Xe6A0N7BsRrk3odgBPa2NIoxAI3elQ3xqOOoo13FYYF0lBgFiPrR3h38uAXiP0sqecFT0FPQO_VVomtEFpnuP-oHrCfPNs0_U4s8YeBTqJw&authuser=1" className='flex flex-row' target='_blank'>
             <MapPin className="w-5 h-5 text-orange-500" />
-            <span className="text-sm">Mumbai, India</span>
+            <span className="text-sm">Raja Park ,Jaipur ,Rajasthan</span>
+            </a>
           </div>
           <div className="flex items-center gap-2">
             <Clock className="w-5 h-5 text-orange-500" />
-            <span className="text-sm">7 AM - 11 PM</span>
+            <span className="text-sm">10 AM - 12 AM</span>
           </div>
         </motion.div>
 
@@ -152,7 +171,7 @@ const MenuPage = () => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="py-20 px-6"
+        className="py-2 px-6"
       >
         <motion.div
           initial={{ y: 50, opacity: 0 }}
@@ -244,9 +263,9 @@ const MenuPage = () => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="py-20 px-6"
+        className="py-20 px-6 z-[999] "
       >
-        <div className="max-w-md mx-auto text-center">
+        <div className="max-w-md mx-auto text-center mb-12">
           <motion.h2
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -256,21 +275,41 @@ const MenuPage = () => {
             Visit Us
           </motion.h2>
           <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="space-y-4"
-          >
-            <div className="flex items-center justify-center gap-3">
-              <Phone className="w-5 h-5 text-orange-500" />
-              <span className="text-gray-700">+91 98765 43210</span>
-            </div>
-            <div className="flex items-center justify-center gap-3">
-              <MapPin className="w-5 h-5 text-orange-500" />
-              <span className="text-gray-700">Andheri West, Mumbai</span>
-            </div>
-          </motion.div>
+  initial={{ y: 50, opacity: 0 }}
+  whileInView={{ y: 0, opacity: 1 }}
+  viewport={{ once: true }}
+  transition={{ delay: 0.2 }}
+  className="flex flex-row items-center justify-center gap-3"
+>
+  <a
+    href="https://wa.me/919928819320?text=Hello%20World"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2"
+  >
+    <Phone className="w-5 h-5 text-orange-500" />
+    <span className="text-gray-700">+91 99288 19320</span>
+  </a>
+</motion.div>
+
+<motion.div
+  initial={{ y: 50, opacity: 0 }}
+  whileInView={{ y: 0, opacity: 1 }}
+  viewport={{ once: true }}
+  transition={{ delay: 0.2 }}
+  className="flex flex-row items-center justify-center gap-3"
+>
+  <a
+    href="https://www.google.com/search?q=Rohit+Bhaiya+Mumbai+ka+Vada+Pav"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2"
+  >
+    <MapPin className="w-5 h-5 text-orange-500" />
+    <span className="text-sm text-gray-700">Raja Park, Jaipur, Rajasthan</span>
+  </a>
+</motion.div>
+
         </div>
       </motion.section>
 
@@ -294,13 +333,13 @@ const MenuPage = () => {
           transition={{ duration: 2, repeat: Infinity }}
           className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-full font-bold text-lg shadow-2xl backdrop-blur-sm"
         >
-          Order Now 🍴
+          <a href="/">Order Now 🍴</a>
         </motion.button>
       </motion.div>
 
       {/* Modal for Image Preview */}
       <AnimatePresence>
-        {selectedImage && (
+        {selectedImage ? (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -314,13 +353,14 @@ const MenuPage = () => {
               exit={{ scale: 0.3, opacity: 0 }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
               className="relative max-w-lg w-full"
-              onClick={(e) => e.stopPropagation()}
+
             >
               <div className="bg-white rounded-3xl overflow-hidden shadow-2xl">
-                {/* Placeholder for selected image */}
-                <div className="aspect-square bg-gradient-to-br from-orange-300 to-red-400 flex items-center justify-center text-white font-bold text-3xl">
-                  {selectedImage.name}
-                </div>
+              
+            
+                <img src={selectedImage.image} alt="" className="aspect-auto flex items-center justify-center text-white font-bold text-3xl"/>
+            
+                
                 <div className="p-6">
                   <h3 className="text-2xl font-bold text-gray-800 mb-2">
                     {selectedImage.name}
@@ -330,7 +370,6 @@ const MenuPage = () => {
                   </p>
                 </div>
               </div>
-              
               {/* Close button */}
               <motion.button
                 whileHover={{ scale: 1.1 }}
@@ -342,7 +381,7 @@ const MenuPage = () => {
               </motion.button>
             </motion.div>
           </motion.div>
-        )}
+        ): null}
       </AnimatePresence>
     </div>
   );

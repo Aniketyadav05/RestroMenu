@@ -1,8 +1,5 @@
 @import "tailwindcss";
 /* In globals.css or tailwind.css */
-.perspective {
-  perspective: 1200px;
-}
 @font-face{
   font-family: Welcome;
   src: url("./Fonts/NewWaltDisneyUi-8YdA.ttf");
