@@ -8,15 +8,15 @@ const MenuPage = () => {
 
   // Sample menu images - replace with actual paths
   const menuImages = [
-    { id: 1, name: "Vada Pav", image: MenuImages.Menu1 },
-    { id: 2, name: "Misal Pav", image: MenuImages.Menu2 },
-    { id: 3, name: "Dosa", image: MenuImages.Menu3},
-    { id: 4, name: "Chutneys", image: MenuImages.Menu4 },
-    { id: 5, name: "Bhel Puri", image: MenuImages.Menu5 },
-    { id: 6, name: "Pav Bhaji", image: MenuImages.Menu6 },
-    { id: 7, name: "Pav Bhaji", image: MenuImages.Menu7 },
-    { id: 8, name: "Pav Bhaji", image: MenuImages.Menu8 },
-    { id: 9, name: "Pav Bhaji", image: MenuImages.Menu9 }
+    { id: 1, name: "VADA PAV, RICE & WRAP", image: MenuImages.Menu7 },
+    { id: 2, name: "HOT COFFEE, TEA & SHAKES", image: MenuImages.Menu1 },
+    { id: 3, name: "THICK SHAKE & COLD COFFEE", image: MenuImages.Menu2 },
+    { id: 4, name: "COOLERS & MOCKTAILS", image: MenuImages.Menu3},
+    { id: 5, name: "SANDWHICH, BURGER,FRIES & PASTA", image: MenuImages.Menu4 },
+    { id: 6, name: "PIZZA", image: MenuImages.Menu5 },
+    { id: 7, name: "SIDES, NOODLES & STARTERS", image: MenuImages.Menu6 },
+    { id: 8, name: "MAGGI & SOUTH INDIAN", image: MenuImages.Menu8 },
+    { id: 9, name: "SOUPS & DESSERTS", image: MenuImages.Menu9 }
   ];
 
   useEffect(() => {
@@ -71,8 +71,6 @@ const MenuPage = () => {
         <div className="absolute top-1/2 right-10 w-32 h-32 bg-gradient-to-br from-yellow-300 to-orange-400 rounded-full blur-xl animate-pulse delay-1000"></div>
         <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-gradient-to-br from-green-300 to-green-500 rounded-full blur-xl animate-pulse delay-2000"></div>
       </div>
-
-      {/* Free Chutney Badge */}
       <motion.div
         initial={{ scale: 0, rotate: -180 }}
         animate={{ scale: 1, rotate: 0 }}
@@ -210,17 +208,21 @@ const MenuPage = () => {
                   className="w-64 h-80 bg-gradient-to-br from-orange-200 to-yellow-200 rounded-3xl shadow-xl cursor-pointer overflow-hidden backdrop-blur-sm border border-white/20"
                 >
                   {/* Placeholder for menu image */}
-                  <div className="w-full h-full bg-gradient-to-br from-orange-300 to-red-400 flex items-center justify-center text-white font-bold text-xl">
-                    {item.name}
-                  </div>
+                  <div className="w-full h-full bg-gradient-to-br from-orange-300 to-red-400 flex items-center justify-center text-white font-bold text-xl text-center p-2">
+  {item.name.split(" ").length > 2 
+    ? <>
+        {item.name.split(" ").slice(0, 2).join(" ")}<br />
+        {item.name.split(" ").slice(2).join(" ")}
+      </>
+    : item.name}
+</div>
+
+
                   
                   {/* Glass overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                   
-                  {/* Menu item name */}
-                  <div className="absolute bottom-4 left-4 text-white font-bold text-lg">
-                    {item.name}
-                  </div>
+                  
                 </div>
               </motion.div>
             ))}
@@ -362,12 +364,9 @@ const MenuPage = () => {
             
                 
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">
+                  <h3 className="text-2xl text-center font-[Hindi] font-bold text-gray-800 mb-2">
                     {selectedImage.name}
                   </h3>
-                  <p className="text-gray-600">
-                    Authentic Mumbai street food made with love and traditional recipes.
-                  </p>
                 </div>
               </div>
               {/* Close button */}
@@ -375,7 +374,7 @@ const MenuPage = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setSelectedImage(null)}
-                className="absolute -top-4 -right-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center"
+                className="absolute -top-4 -right-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center cursor-pointer"
               >
                 <X className="w-6 h-6 text-gray-600" />
               </motion.button>
