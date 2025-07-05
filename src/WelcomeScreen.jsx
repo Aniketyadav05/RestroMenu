@@ -16,7 +16,7 @@ const WelcomeScreen = ({ isVisible }) => {
 
   const currentText = texts[textIndex];
   const fontClass =
-    currentText === 'नमस्ते' ? 'font-[Hindi] text-6xl' : 'font-[Welcome]';
+    currentText === 'नमस्ते' ? 'font-[Hindi] text-6xl' : 'font-[Welcome] text-5xl';
 
   return (
     <AnimatePresence>
@@ -31,7 +31,7 @@ const WelcomeScreen = ({ isVisible }) => {
           <AnimatePresence mode="wait">
             <motion.h1
               key={textIndex}
-              className={`text-white text-5xl md:text-6xl font-light tracking-wide absolute ${fontClass}`}
+              className={`text-white  md:text-6xl font-light tracking-wide absolute ${fontClass}`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
