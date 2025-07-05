@@ -75,7 +75,7 @@ const MenuPage = () => {
           className="bg-gradient-to-r from-green-400 to-green-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-2"
         >
           <Sparkles className="w-4 h-4" />
-          FREE CHUTNEY SHOT!
+          <a href="https://www.google.com/search?q=Rohit+Bhaiya+Mumbai+ka+Vada+Pav&stick=H4sIAAAAAAAA_-NgU1I1qDC2NEtJMre0MExLSjYxNTG2MqgwSzQ1B4qYGBqnpJomG6QuYpUPys_ILFFwykjMrExU8C3NTUrMVMhOVAhLTElUCEgsAwBRkO8KSwAAAA&hl=en-GB&mat=Cer0ZjqHeiwSElcBYJahaSR1Xe6A0N7BsRrk3odgBPa2NIoxAI3elQ3xqOOoo13FYYF0lBgFiPrR3h38uAXiP0sqecFT0FPQO_VVomtEFpnuP-oHrCfPNs0_U4s8YeBTqJw&authuser=1">Visit Now</a>
         </motion.div>
       </motion.div>
 
