@@ -69,6 +69,8 @@ const MenuPage = () => {
       <div className="fixed inset-0 opacity-20 font-[Welcome]">
         <div className="absolute top-10 left-10 w-20 h-20 bg-gradient-to-br from-orange-300 to-red-400 rounded-full blur-xl animate-pulse"></div>
         <div className="absolute top-1/2 right-10 w-32 h-32 bg-gradient-to-br from-yellow-300 to-orange-400 rounded-full blur-xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/8 left-100 w-32 h-32 bg-gradient-to-br from-green-300 to-green-500 rounded-full blur-xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/4 right-80 w-32 h-32 bg-gradient-to-br from-yellow-300 to-orange-600 rounded-full blur-xl animate-pulse delay-1000"></div>
         <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-gradient-to-br from-green-300 to-green-500 rounded-full blur-xl animate-pulse delay-2000"></div>
       </div>
       <motion.div
