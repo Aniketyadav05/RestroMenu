@@ -7,7 +7,7 @@ import Menu6 from './Menu6.png';
 import Menu7 from './Menu7.png';
 import Menu8 from './Menu8.png';
 import Menu9 from './Menu9.png';
-
+import Logo from './Logo.png'
 export const MenuImages = {
   Menu1,
   Menu2,
@@ -18,4 +18,5 @@ export const MenuImages = {
   Menu7,
   Menu8,
   Menu9,
+  Logo
 };

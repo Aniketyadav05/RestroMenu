@@ -12,7 +12,7 @@ const MenuPage = () => {
     { id: 2, name: "HOT COFFEE, TEA & SHAKES", image: MenuImages.Menu1 },
     { id: 3, name: "THICK SHAKE & COLD COFFEE", image: MenuImages.Menu2 },
     { id: 4, name: "COOLERS & MOCKTAILS", image: MenuImages.Menu3},
-    { id: 5, name: "SANDWHICH, BURGER,FRIES & PASTA", image: MenuImages.Menu4 },
+    { id: 5, name: "SANDWICH, BURGER,FRIES & PASTA", image: MenuImages.Menu4 },
     { id: 6, name: "PIZZA", image: MenuImages.Menu5 },
     { id: 7, name: "SIDES, NOODLES & STARTERS", image: MenuImages.Menu6 },
     { id: 8, name: "MAGGI & SOUTH INDIAN", image: MenuImages.Menu8 },
@@ -55,12 +55,13 @@ const MenuPage = () => {
       scale: 1,
       opacity: 1,
       transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 15
+        duration: 0.5,
+        ease: "easeInOut"
       }
     }
   };
+  
+  
   
 
   return (
@@ -108,15 +109,15 @@ const MenuPage = () => {
           variants={itemVariants}
           className="relative mb-8"
         >
-          <div className="w-32 h-32 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center shadow-2xl">
-            <ChefHat className="w-16 h-16 text-white" />
+          <div className="w-32 h-32 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center shadow-2xl">
+            <img src={MenuImages.Logo} alt=""  className="w-24 h-24 text-white" />
           </div>
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center"
           >
-            <Star className="w-4 h-4 text-orange-600" />
+            <Star className="w-4 h-4 text-yellow-600" />
           </motion.div>
         </motion.div>
 
@@ -125,7 +126,7 @@ const MenuPage = () => {
           <h1 className="text-4xl md:text-6xl font-black text-gray-800 mb-2 font-[Hindi]">
             Rohit भैया
           </h1>
-          <p className="text-xl md:text-2xl text-orange-600 font-bold font-[Hindi]">
+          <p className="text-xl md:text-2xl text-yellow-400 font-bold font-[Hindi]">
           मुंबई Cha Vada Pav
           </p>
         </motion.div>
@@ -145,12 +146,12 @@ const MenuPage = () => {
         >
           <div className="flex items-center gap-2">
             <a href="https://www.google.com/search?q=Rohit+Bhaiya+Mumbai+ka+Vada+Pav&stick=H4sIAAAAAAAA_-NgU1I1qDC2NEtJMre0MExLSjYxNTG2MqgwSzQ1B4qYGBqnpJomG6QuYpUPys_ILFFwykjMrExU8C3NTUrMVMhOVAhLTElUCEgsAwBRkO8KSwAAAA&hl=en-GB&mat=Cer0ZjqHeiwSElcBYJahaSR1Xe6A0N7BsRrk3odgBPa2NIoxAI3elQ3xqOOoo13FYYF0lBgFiPrR3h38uAXiP0sqecFT0FPQO_VVomtEFpnuP-oHrCfPNs0_U4s8YeBTqJw&authuser=1" className='flex flex-row' target='_blank'>
-            <MapPin className="w-5 h-5 text-orange-500" />
+            <MapPin className="w-5 h-5 text-yellow-400" />
             <span className="text-sm">Raja Park ,Jaipur ,Rajasthan</span>
             </a>
           </div>
           <div className="flex items-center gap-2">
-            <Clock className="w-5 h-5 text-orange-500" />
+            <Clock className="w-5 h-5 text-yellow-400" />
             <span className="text-sm">10 AM - 12 AM</span>
           </div>
         </motion.div>
@@ -159,7 +160,7 @@ const MenuPage = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="text-orange-500 text-sm font-medium"
+          className="text-yellow-400 text-sm font-medium"
         >
           Scroll to explore our menu ↓
         </motion.div>
@@ -207,10 +208,10 @@ const MenuPage = () => {
               >
                 <div
                   onClick={() => setSelectedImage(item)}
-                  className="w-64 h-80 bg-gradient-to-br from-orange-200 to-yellow-200 rounded-3xl shadow-xl cursor-pointer overflow-hidden backdrop-blur-sm border border-white/20"
+                  className="w-64 h-80 bg-gradient-to-br from-yellow-200 to-yellow-600 rounded-3xl shadow-xl cursor-pointer overflow-hidden backdrop-blur-sm border border-white/20"
                 >
                   {/* Placeholder for menu image */}
-                  <div className="w-full h-full bg-gradient-to-br from-orange-300 to-red-400 flex items-center justify-center text-white font-bold text-xl text-center p-2">
+                  <div className="w-full h-full bg-gradient-to-br from-yellow-300 to-yellow-400 flex items-center justify-center text-white font-bold text-xl text-center p-2">
   {item.name.split(" ").length > 2 
     ? <>
         {item.name.split(" ").slice(0, 2).join(" ")}<br />
@@ -291,7 +292,7 @@ const MenuPage = () => {
     rel="noopener noreferrer"
     className="flex items-center gap-2"
   >
-    <Phone className="w-5 h-5 text-orange-500" />
+    <Phone className="w-5 h-5 text-yellow-500" />
     <span className="text-gray-700">+91 99288 19320</span>
   </a>
 </motion.div>
@@ -309,7 +310,7 @@ const MenuPage = () => {
     rel="noopener noreferrer"
     className="flex items-center gap-2"
   >
-    <MapPin className="w-5 h-5 text-orange-500" />
+    <MapPin className="w-5 h-5 text-yellow-500" />
     <span className="text-sm text-gray-700">Raja Park, Jaipur, Rajasthan</span>
   </a>
 </motion.div>
@@ -330,12 +331,12 @@ const MenuPage = () => {
           animate={{ 
             boxShadow: [
               "0 0 0 0 rgba(249, 115, 22, 0.7)",
-              "0 0 0 20px rgba(249, 115, 22, 0)",
-              "0 0 0 0 rgba(249, 115, 22, 0)"
+              "0 0 0 20px rgba(249, 225, 22, 0)",
+              "0 0 0 0 rgba(249, 225, 22, 0)"
             ]
           }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-full font-bold text-lg shadow-2xl backdrop-blur-sm"
+          className="bg-gradient-to-r from-yellow-300 to-yellow-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-2xl backdrop-blur-sm"
         >
           <a href="/">Order Now 🍴</a>
         </motion.button>
