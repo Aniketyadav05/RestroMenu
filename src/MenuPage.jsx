@@ -134,9 +134,9 @@ const MenuPage = () => {
         {/* Tagline */}
         <motion.p
           variants={itemVariants}
-          className="text-lg md:text-xl text-gray-600 mb-8 max-w-lg leading-relaxed flex flex-row"
+          className=" text-gray-600 mb-8 max-w-lg leading-relaxed flex flex-row"
         >
-          <QuoteIcon className='scale-x-[-1] w-6 h-6'/><span className='font-bold'>Authentic Mumbai street food served with love</span>< QuoteIcon className="w-6 h-6"/>
+          <QuoteIcon className='scale-x-[-1] w-3 h-3 md:w-6 md:h-6'/><span className='font-bold text-sm md:text-xl '>Authentic Mumbai street food served with love</span>< QuoteIcon className="w-3 h-3 md:w-6 md:h-6"/>
         </motion.p>
 
         {/* Location Info */}
