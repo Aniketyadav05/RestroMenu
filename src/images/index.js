@@ -8,6 +8,15 @@ import Menu7 from './Menu7.png';
 import Menu8 from './Menu8.png';
 import Menu9 from './Menu9.png';
 import Logo from './Logo.png'
+import VadaPav from './Stickers/VadaPav.png'
+import Dosa from './Stickers/Dosa.png'
+import ColdCoffee from './Stickers/ColdCoffee.png'
+import Kulhad from './Stickers/Kulhad.png'
+import Mojito from './Stickers/Mojito.png'
+import Pizza from './Stickers/Pizza.png'
+import Sandwich from './Stickers/Sandwich.png'
+import Noodles from './Stickers/Noodles.png'
+import Desserts from './Stickers/Dessert.png'
 export const MenuImages = {
   Menu1,
   Menu2,
@@ -18,5 +27,15 @@ export const MenuImages = {
   Menu7,
   Menu8,
   Menu9,
-  Logo
+  Logo,
+  VadaPav,
+  Dosa,
+  ColdCoffee,
+  Kulhad,
+  Mojito,
+Pizza,
+Sandwich,
+Noodles,
+Desserts
+
 };

@@ -8,15 +8,15 @@ const MenuPage = () => {
 
   // Sample menu images - replace with actual paths
   const menuImages = [
-    { id: 1, name: "VADA PAV, RICE & WRAP", image: MenuImages.Menu7 },
-    { id: 2, name: "HOT COFFEE, TEA & SHAKES", image: MenuImages.Menu1 },
-    { id: 3, name: "THICK SHAKE & COLD COFFEE", image: MenuImages.Menu2 },
-    { id: 4, name: "COOLERS & MOCKTAILS", image: MenuImages.Menu3},
-    { id: 5, name: "SANDWICH, BURGER,FRIES & PASTA", image: MenuImages.Menu4 },
-    { id: 6, name: "PIZZA", image: MenuImages.Menu5 },
-    { id: 7, name: "SIDES, NOODLES & STARTERS", image: MenuImages.Menu6 },
-    { id: 8, name: "MAGGI & SOUTH INDIAN", image: MenuImages.Menu8 },
-    { id: 9, name: "SOUPS & DESSERTS", image: MenuImages.Menu9 }
+    { id: 1, name: "VADA PAV, RICE & WRAP", image: MenuImages.Menu7,logo:MenuImages.VadaPav },
+    { id: 2, name: "HOT COFFEE, TEA & SHAKES", image: MenuImages.Menu1,logo:MenuImages.Kulhad },
+    { id: 3, name: "THICK SHAKE & COLD COFFEE", image: MenuImages.Menu2,logo:MenuImages.ColdCoffee },
+    { id: 4, name: "COOLERS & MOCKTAILS", image: MenuImages.Menu3 ,logo:MenuImages.Mojito},
+    { id: 5, name: "SANDWICH, BURGER,FRIES & PASTA", image: MenuImages.Menu4,logo:MenuImages.Sandwich },
+    { id: 6, name: "PIZZA", image: MenuImages.Menu5,logo:MenuImages.Pizza },
+    { id: 7, name: "SIDES, NOODLES & STARTERS", image: MenuImages.Menu6,logo:MenuImages.Noodles },
+    { id: 8, name: "MAGGI & SOUTH INDIAN", image: MenuImages.Menu8,logo:MenuImages.Dosa },
+    { id: 9, name: "SOUPS & DESSERTS", image: MenuImages.Menu9,logo:MenuImages.Desserts }
   ];
 
   useEffect(() => {
@@ -28,23 +28,24 @@ const MenuPage = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15, // slight overlap
-        delayChildren: 0.3,
+        staggerChildren: 0.2,       // slower stagger
+        delayChildren: 0.4,         // more time before starting
         ease: "easeInOut"
       }
     }
   };
   
+  
   const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
+    hidden: { y: 40, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
         type: "spring",
-        stiffness: 60,   // lower stiffness = smoother
-        damping: 14,     // more damping = less bounce
-        mass: 0.5        // lighter element = more fluid
+        stiffness: 40,      // lower = softer bounce
+        damping: 16,        // slightly more damped
+        mass: 0.6           // slightly heavier feel
       }
     }
   };
@@ -55,11 +56,13 @@ const MenuPage = () => {
       scale: 1,
       opacity: 1,
       transition: {
-        duration: 0.5,
-        ease: "easeInOut"
+        duration: 0.7,         // slower animation
+        ease: [0.25, 0.1, 0.25, 1] // custom easing (easeInOutQuad)
       }
     }
   };
+  
+   
   
   
   
@@ -73,7 +76,9 @@ const MenuPage = () => {
         <div className="absolute top-1/8 left-100 w-32 h-32 bg-gradient-to-br from-green-300 to-green-500 rounded-full blur-xl animate-pulse delay-1000"></div>
         <div className="absolute top-1/4 right-80 w-32 h-32 bg-gradient-to-br from-yellow-300 to-orange-600 rounded-full blur-xl animate-pulse delay-1000"></div>
         <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-gradient-to-br from-green-300 to-green-500 rounded-full blur-xl animate-pulse delay-2000"></div>
+        
       </div>
+      
       <motion.div
         initial={{ scale: 0, rotate: -180 }}
         animate={{ scale: 1, rotate: 0 }}
@@ -97,6 +102,7 @@ const MenuPage = () => {
         </motion.div>
       </motion.div>
 
+
       {/* Hero Section */}
       <motion.section
         initial="hidden"
@@ -104,6 +110,8 @@ const MenuPage = () => {
         variants={containerVariants}
         className="min-h-screen flex flex-col items-center justify-center px-6 text-center relative"
       >
+        
+         
         {/* Chef Avatar */}
         <motion.div
           variants={itemVariants}
@@ -211,7 +219,8 @@ const MenuPage = () => {
                   className="w-64 h-80 bg-gradient-to-br from-yellow-200 to-yellow-600 rounded-3xl shadow-xl cursor-pointer overflow-hidden backdrop-blur-sm border border-white/20"
                 >
                   {/* Placeholder for menu image */}
-                  <div className="w-full h-full bg-gradient-to-br from-yellow-300 to-yellow-400 flex items-center justify-center text-white font-bold text-xl text-center p-2">
+                  <img src={item.logo} alt="" className='w-full h-[80%] object-contain mx-auto mt-4' />
+                  <div className="w-full h-[15%] bg-gradient-to-br from-yellow-300 to-yellow-400 flex items-center justify-center text-white font-bold text-center px-2 text-base leading-tight overflow-hidden text-ellipsis break-words">
   {item.name.split(" ").length > 2 
     ? <>
         {item.name.split(" ").slice(0, 2).join(" ")}<br />
@@ -219,6 +228,7 @@ const MenuPage = () => {
       </>
     : item.name}
 </div>
+
 
 
                   
