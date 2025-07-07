@@ -160,7 +160,7 @@ const MenuPage = () => {
           </div>
           <div className="flex items-center gap-2">
             <Clock className="w-5 h-5 text-yellow-400" />
-            <span className="text-sm">10 AM - 12 AM</span>
+            <span className="text-sm">12 PM - 12 AM</span>
           </div>
         </motion.div>
 
