@@ -8,15 +8,15 @@ const MenuPage = () => {
 
   // Sample menu images - replace with actual paths
   const menuImages = [
-    { id: 1, name: "VADA PAV, RICE & WRAP", image: MenuImages.Menu7,logo:MenuImages.VadaPav },
-    { id: 2, name: "HOT COFFEE, TEA & SHAKES", image: MenuImages.Menu1,logo:MenuImages.Kulhad },
-    { id: 3, name: "THICK SHAKE & COLD COFFEE", image: MenuImages.Menu2,logo:MenuImages.ColdCoffee },
-    { id: 4, name: "COOLERS & MOCKTAILS", image: MenuImages.Menu3 ,logo:MenuImages.Mojito},
-    { id: 5, name: "SANDWICH, BURGER,FRIES & PASTA", image: MenuImages.Menu4,logo:MenuImages.Sandwich },
-    { id: 6, name: "PIZZA", image: MenuImages.Menu5,logo:MenuImages.Pizza },
-    { id: 7, name: "SIDES, NOODLES & STARTERS", image: MenuImages.Menu6,logo:MenuImages.Noodles },
-    { id: 8, name: "MAGGI & SOUTH INDIAN", image: MenuImages.Menu8,logo:MenuImages.Dosa },
-    { id: 9, name: "SOUPS & DESSERTS", image: MenuImages.Menu9,logo:MenuImages.Desserts }
+    { id: 1, name: "VADA PAV, SIDES & NOODLES", image: MenuImages.Menu1,logo:MenuImages.VadaPav },
+    { id: 2, name: "STARTERS, RICE & WRAPS", image: MenuImages.Menu2,logo:MenuImages.Noodles },
+    { id: 3, name: "SANDWICH, BURGER,FRIES & PASTA", image: MenuImages.Menu3,logo:MenuImages.Sandwich },
+    { id: 4, name: "MAGGI & SOUTH INDIAN", image: MenuImages.Menu4,logo:MenuImages.Dosa },
+    { id: 5, name: "PIZZA", image: MenuImages.Menu5,logo:MenuImages.Pizza },
+    { id: 6, name: "HOT COFFEE, TEA & SHAKES", image: MenuImages.Menu7,logo:MenuImages.Kulhad },
+    { id: 7, name: "THICK SHAKE & COLD COFFEE", image: MenuImages.Menu8,logo:MenuImages.ColdCoffee },
+    { id: 8, name: "COOLERS & MOCKTAILS", image: MenuImages.Menu9 ,logo:MenuImages.Mojito},
+    { id: 9, name: "SOUPS & DESSERTS", image: MenuImages.Menu6,logo:MenuImages.Desserts }
   ];
 
   useEffect(() => {
