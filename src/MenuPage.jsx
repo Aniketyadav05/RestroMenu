@@ -354,47 +354,48 @@ const MenuPage = () => {
 
       {/* Modal for Image Preview */}
       <AnimatePresence>
-        {selectedImage ? (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
-            onClick={() => setSelectedImage(null)}
-          >
-            <motion.div
-              initial={{ scale: 0.3, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.3, opacity: 0 }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="relative max-w-lg w-full"
+  {selectedImage ? (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+      onClick={() => setSelectedImage(null)}
+    >
+      <motion.div
+        initial={{ scale: 0.3, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.3, opacity: 0 }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        className="relative max-w-lg w-full"
+      >
+        <div className="bg-[#FFF101] rounded-3xl overflow-hidden shadow-2xl flex flex-col items-center justify-center p-4">
+          <img
+            src={selectedImage.image}
+            alt=""
+            className="max-h-[80vh] w-auto object-contain"
+          />
+          <h3 className="text-2xl text-center font-[Hindi] pt-4 font-bold text-gray-800 mb-2">
+            {selectedImage.name}
+          </h3>
+        </div>
 
-            >
-              <div className="bg-white rounded-3xl overflow-hidden shadow-2xl">
-              
-            
-                <img src={selectedImage.image} alt="" className="aspect-auto flex items-center justify-center text-white font-bold text-3xl"/>
-            
-                
-                <div className="p-6">
-                  <h3 className="text-2xl text-center font-[Hindi] font-bold text-gray-800 mb-2">
-                    {selectedImage.name}
-                  </h3>
-                </div>
-              </div>
-              {/* Close button */}
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={() => setSelectedImage(null)}
-                className="absolute -top-4 -right-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center cursor-pointer"
-              >
-                <X className="w-6 h-6 text-gray-600" />
-              </motion.button>
-            </motion.div>
-          </motion.div>
-        ): null}
-      </AnimatePresence>
+       
+
+        {/* Close button */}
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => setSelectedImage(null)}
+          className="absolute -top-4 -right-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center cursor-pointer"
+        >
+          <X className="w-6 h-6 text-gray-600" />
+        </motion.button>
+      </motion.div>
+    </motion.div>
+  ) : null}
+</AnimatePresence>
+
     </div>
   );
 };
