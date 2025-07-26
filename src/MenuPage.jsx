@@ -348,7 +348,7 @@ const MenuPage = () => {
           transition={{ duration: 2, repeat: Infinity }}
           className="bg-gradient-to-r from-yellow-300 to-yellow-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-2xl backdrop-blur-sm"
         >
-          <a href="tel:9928819320">Order Now 🍴</a>
+          <a href="https://www.swiggy.com/menu/1156153?source=sharing" target="_blank">Order Now 🍴</a>
         </motion.button>
       </motion.div>
 
